@@ -85,3 +85,4 @@ typings/
 .next
 package-lock.json
 yarn.lock
+.firebaserc
