@@ -19,7 +19,7 @@ const TeamView: React.SFC<TeamViewProps> = (props) => {
     }
 
     return (
-        <table className="table">
+        <table className="table table-dark">
             <thead>
                 <tr>
                     <th scope="col">Guid</th>

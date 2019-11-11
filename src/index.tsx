@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
 import 'bootstrap/dist/css/bootstrap.css';
+import './assets/site.scss';
 import {FireBaseConfig} from './private/firebaseconfig';
   firebase.initializeApp(FireBaseConfig);
 
