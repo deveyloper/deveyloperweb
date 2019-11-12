@@ -1,17 +1,90 @@
-body{
-    background-color: #EAE7DC;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$backColor: #17a2b8;
+$headerBackColor: rgb(146, 169, 218);
+
+.App {
+  //height: 100%;
 }
 
-.left{
-    float:left
+.main-container {
+  display: grid;
+  grid-template-rows: minmax(100px, auto) 10fr minmax(100px, auto);
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
 }
 
-div.mT5{
-    margin-top: 5px;;
+.left-menu {
+  background-color: darkgrey;
+  color: white;
+  text-align: center;
+}
+.application-container {
+  padding-top: 3%;
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+  padding-left: 10px;
+  text-align: center;
 }
 
-.table-custom{
-    color: #fff;
-    background-color: #254E58;
+.header-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  background-color: $headerBackColor;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  background-color: cornflowerblue;
+}
+.body-container {
+  grid-template-columns: 1fr 5fr;
+  display: grid;
+}
+
+.logo-wrapper {
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+.save-button {
+  width: 45%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #0062cc;
+  border: none;
+  cursor: pointer;
+  margin-right: 6%;
+  background-color: white;
+  color: blue;
+  margin-top: 4%;
+  margin-bottom: 5%;
+  float: left;
+}
+
+.refresh-button {
+  width: 45%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #0062cc;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: blue;
+  margin-top: 4%;
+  margin-bottom: 5%;
+  float: right;
+}
+
+.input-fields-wrapper {
+  margin-right: 22%;
+  margin-left: 20%;
+}
+
+.input-fields-wrapper input{
+    border-radius: 1rem;
 }
