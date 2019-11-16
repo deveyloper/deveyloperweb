@@ -1,54 +1,3 @@
-$backColor: #17a2b8;
-$headerBackColor: rgb(146, 169, 218);
-
-.App {
-  //height: 100%;
-}
-
-.main-container {
-  display: grid;
-  grid-template-rows: minmax(100px, auto) 10fr minmax(100px, auto);
-  font-size: 18px;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.left-menu {
-  background-color: darkgrey;
-  color: white;
-  text-align: center;
-}
-.application-container {
-  padding-top: 3%;
-  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-  padding-left: 10px;
-  text-align: center;
-}
-
-.header-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  background-color: $headerBackColor;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  background-color: cornflowerblue;
-}
-.body-container {
-  grid-template-columns: 1fr 5fr;
-  display: grid;
-}
-
-.logo-wrapper {
-  text-align: center;
-}
-
-.logo {
-  width: 100%;
-  height: 100%;
-}
-
 .save-button {
   width: 45%;
   border-radius: 1rem;
@@ -87,4 +36,8 @@ $headerBackColor: rgb(146, 169, 218);
 
 .input-fields-wrapper input{
     border-radius: 1rem;
+}
+
+.table-custom{
+    background-color: aliceblue;
 }
