@@ -17516,6 +17516,10 @@ hr {
   height: 60px;
 }
 
+.sidebar{
+  background: radial-gradient(ellipse at center, #2D7CE7 0%, #36AFEC 100%);
+}
+
 .sidebar[data="blue"],
 .off-canvas-sidebar[data="blue"] {
   background: #3358f4;
