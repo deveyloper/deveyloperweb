@@ -81,28 +81,26 @@ const App: React.FC = () => {
       <div className="input-fields-wrapper">
         <div className="row">
           <div className="col-md-12">
-            <form>
-              <div className="form-group">
-                <input className="form-control" type="text" id="txtPlayerId" placeholder="Player ID" ref={txtPlayerId} />
-              </div>
-              <div className="form-group">
-                <input className="form-control" type="text" id="txtPlayerName" placeholder="Player Name" ref={txtPlayerName} />
-              </div>
-              <div className="form-group">
-                <input className="form-control" type="text" id="txtPlayerSurName" placeholder="Player Surname" ref={txtPlayerSurname} />
-              </div>
-              <div className="form-group">
-                <input className="form-control" type="text" id="txtPlayerPosition" placeholder="Player Position" ref={txtPlayerPosition} />
-              </div>
-              <div className="form-group">
-                <button id="btnSave" onClick={savePlayer} className="btn btn-primary save-button custom-button">
-                  Save
+            <div className="form-group">
+              <input className="form-control" type="text" id="txtPlayerId" placeholder="Player ID" ref={txtPlayerId} />
+            </div>
+            <div className="form-group">
+              <input className="form-control" type="text" id="txtPlayerName" placeholder="Player Name" ref={txtPlayerName} />
+            </div>
+            <div className="form-group">
+              <input className="form-control" type="text" id="txtPlayerSurName" placeholder="Player Surname" ref={txtPlayerSurname} />
+            </div>
+            <div className="form-group">
+              <input className="form-control" type="text" id="txtPlayerPosition" placeholder="Player Position" ref={txtPlayerPosition} />
+            </div>
+            <div className="form-group">
+              <button id="btnSave" onClick={savePlayer} className="btn btn-primary save-button custom-button">
+                Save
                 </button>
-                <button id="btnSave" onClick={reloadPlayers} className="btn btn-primary refresh-button custom-button">
-                  Reload
+              <button id="btnSave" onClick={reloadPlayers} className="btn btn-primary refresh-button custom-button">
+                Reload
                 </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -110,7 +108,7 @@ const App: React.FC = () => {
         <TeamView teams={undefined} />
       </div>
       <div className="fresh-table full-color-azure">
-        <table className="table table-custom">
+        <table className="table">
           <thead>
             <tr>
               <th>Name</th>

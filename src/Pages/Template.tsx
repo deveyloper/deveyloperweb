@@ -12,6 +12,7 @@ const Template: React.FC = () => {
           <div className="row">
             <div className="col-12">
               <div className="card card-chart">
+              Template
               </div>
             </div>
           </div>

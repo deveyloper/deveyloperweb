@@ -1,17 +1,30 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useParams
 
 } from 'react-router-dom';
 import App from '../Pages/App';
 import Template from '../Pages/Template';
 import '../assets/black-dashboard.css';
 import '../assets/scripts/black-diamond';
+import MatchDetail from '../Pages/MatchDetail';
+import { MenuItem } from '../Types/MenuItem';
 
-const Main: React.FC = () => {
+const Main: React.FC = (props) => {
+
+    const MenuData: MenuItem[] = [
+        new MenuItem(App, "app", "App"),
+        new MenuItem(Template, "template", "Template"),
+        new MenuItem(MatchDetail, "matchDetail", "Match Detail")
+    ]
+    const [activeMenu, setActiveMenu] = useState<string | undefined>(undefined);
+
+    let params = useParams();
+    alert(params);
     return (
         <Router>
             <div className="white-content">
@@ -19,31 +32,24 @@ const Main: React.FC = () => {
                     <div className="sidebar">
                         <div className="sidebar-wrapper">
                             <div className="logo">
-                                <a href="javascript:void(0)" className="simple-text logo-mini">
+                                <a href="#" className="simple-text logo-mini">
                                 </a>
-                                <a href="javascript:void(0)" className="simple-text logo-normal">
+                                <a href="#" className="simple-text logo-normal">
                                     Deveyloper
-          </a>
+                                </a>
                             </div>
                             <ul className="nav">
-                                <li className="active">
-                                    <Link to="/">
-                                        <i className="tim-icons icon-chart-pie-36"></i>
-                                        <p>Home</p>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/App">
-                                        <i className="tim-icons icon-chart-pie-36"></i>
-                                        <p>App</p>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/Template">
-                                        <i className="tim-icons icon-chart-pie-36"></i>
-                                        <p>Template</p>
-                                    </Link>
-                                </li>
+                                {
+                                    MenuData.map((menuData) => {
+                                        return (
+                                            <li key={menuData.Route + menuData.MenuName} className={activeMenu == menuData.Route ? "active" : ""}>
+                                                <Link onClick={() => setActiveMenu(menuData.Route)} to={"/" + menuData.Route}>
+                                                    <i className="tim-icons icon-chart-pie-36"></i>
+                                                    <p>{menuData.MenuName}</p>
+                                                </Link>
+                                            </li>
+                                        )
+                                    })}
                             </ul>
                         </div>
                     </div>
@@ -60,7 +66,7 @@ const Main: React.FC = () => {
                                             <span className="navbar-toggler-bar bar3"></span>
                                         </button>
                                     </div>
-                                    <a className="navbar-brand" href="javascript:void(0)">Dashboard</a>
+                                    <a className="navbar-brand" href="#">Dashboard</a>
                                 </div>
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-bar navbar-kebab"></span>
@@ -93,15 +99,12 @@ const Main: React.FC = () => {
                         </div>
                         <div className="content">
                             <Switch>
-                                <Route exact path="/">
-                                    <App />
-                                </Route>
-                                <Route path="/App">
-                                    <App />
-                                </Route>
-                                <Route path="/Template">
-                                    <Template />
-                                </Route>
+                                {
+                                    MenuData.map((menuData) => {
+                                        return <Route key={menuData.Route} path={"/" + menuData.Route} component={menuData.Component} />
+                                    })
+                                }
+
                             </Switch>
                             <footer className="footer">
                                 <div className="container-fluid">
