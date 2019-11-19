@@ -1,3 +1,4 @@
+$minWidth: 768px;
 body,
 html {
   margin: 0;
@@ -19,6 +20,7 @@ body {
   padding-bottom: 3vw;
   height: 100vh;
   display: grid;
+  grid-template-columns: repeat(10, 1fr);
   grid-template-areas:
     "logo logo header header header header header header user user"
     "left-bar left-bar content content content content content content content right-bar"
@@ -124,4 +126,40 @@ body {
             font-weight: bold;
           }
     }
+    tr > td.match-result{
+      text-align: center;
+    }
+    
+    tr > td.home-team{
+      text-align: left;
+    }
+
+    tr > td.away-team{
+      text-align: right;
+    }
+
+    tr > td {
+      width: 33%;
+    }
+}
+
+@media (max-width: $minWidth){
+ .left-bar > p > span {
+   display: none;
+ }
+
+ .icon-span {
+ display: none;
+ }
+
+ .result-table > tbody > tr > td > div.team-name {
+  display: none;
+}
+}
+
+
+@media (min-width: $minWidth){
+  .result-table > tbody > tr > td > div.team-code {
+    display: none;
+  }
 }

@@ -75,7 +75,7 @@ const BlackWhite: React.FC = () => {
                 </p>
             </div>
             <div className="content">
-                <div className="fresh-table white" style={{display:"none"}}>
+                <div className="fresh-table white" style={{ display: "none" }}>
                     <table className="table white">
                         <tbody>
                             {players.map((player) => {
@@ -94,7 +94,15 @@ const BlackWhite: React.FC = () => {
                         <tbody>
                             {premireLeagueResults.map((round, index) => {
                                 return <tr key={index}>
-                                <td className={round.score1! > round.score2! ? "win":""}>{round.team1.name}</td><td> <b>{round.score1} - {round.score2}</b></td><td className={round.score2! > round.score1! ? "win":""}>{round.team2.name}</td>
+                                    <td className={"home-team " + (round.score1! > round.score2! ? "win" : "")}>
+                                        <div className="team-name">{round.team1.name}</div>
+                                        <div className="team-code">{round.team1.code}</div>
+                                        </td>
+                                    <td className="match-result"> <b>{round.score1} - {round.score2}</b></td>
+                                    <td className={"away-team " + (round.score2! > round.score1! ? "win" : "")}>
+                                        <div className="team-name"> {round.team2.name}</div>
+                                        <div className="team-code"> {round.team2.code}</div>
+                                        </td>
                                 </tr>
                             })}
                         </tbody>
