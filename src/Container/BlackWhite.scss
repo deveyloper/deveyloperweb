@@ -8,8 +8,11 @@ html {
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(30deg, #999999 0%, #eeeeee 100%);
-  font-family: "Times New Roman", Times, serif;
+  background-image: linear-gradient(
+    rgb(240, 242, 245) 100%,
+    rgb(255, 255, 255) 196px
+  );
+font-family: "Times New Roman", Times, serif;
   color: #1d253b;
 }
 .page {
