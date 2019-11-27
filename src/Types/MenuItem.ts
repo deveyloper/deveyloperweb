@@ -5,7 +5,7 @@ export class MenuItem {
     Component: React.FC;
     Route: string;
     MenuName: string;
-    Icon: IconDefinition
+    Icon: IconDefinition;
 
     constructor(component: React.FC, route: string, menuName: string, icon: IconDefinition) {
         this.Component = component;

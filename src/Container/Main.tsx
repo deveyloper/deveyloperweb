@@ -45,10 +45,11 @@ const Main: React.FC = (props) => {
                 <div className="left-bar">
                     {
                         MenuData.map((menuData) => {
+                            const isActive: boolean = activeMenu == menuData.Route;
                             return (
                                 <p>
-                                    <Link to={"/" + menuData.Route}>
-                                        <FontAwesomeIcon icon={menuData.Icon} />
+                                    <Link onClick={() => setActiveMenu(menuData.Route)} className={isActive ? "active" : ""} to={"/" + menuData.Route}>
+                                        <FontAwesomeIcon color={isActive ? "black" : "#999999"} icon={menuData.Icon} />
                                         <span className="icon-span">{menuData.MenuName}</span>
                                     </Link>
                                 </p>

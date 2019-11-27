@@ -69,7 +69,13 @@ font-family: "Times New Roman", Times, serif;
   }
 
   a {
+    color: #333333;
+  }
+
+  a:hover, 
+  a.active{
     color: black;
+    font-weight: bold;
   }
 
   li {
