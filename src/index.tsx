@@ -10,5 +10,5 @@ import Main from './Container/Main';
 import BlackWhite from './Container/BlackWhite'
   firebase.initializeApp(FireBaseConfig);
 
-ReactDOM.render(<BlackWhite />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
 serviceWorker.unregister();

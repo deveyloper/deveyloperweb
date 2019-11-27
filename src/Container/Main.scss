@@ -1,69 +1,167 @@
-$backColor: #17a2b8;
-$headerBackColor: rgb(146, 169, 218);
-
-.main-container {
-  position: relative;
+$minWidth: 768px;
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+    rgb(240, 242, 245) 100%,
+    rgb(255, 255, 255) 196px
+  );
+font-family: "Times New Roman", Times, serif;
+  color: #1d253b;
+}
+.page {
+  overflow: scroll;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
   height: 100vh;
-  top:0;
   display: grid;
-  grid-template-rows: minmax(100px, auto) 10fr minmax(100px, auto);
-  font-size: 18px;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.left-menu {
-  background: #ba54f5;
-  background: -webkit-linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
-  background: -o-linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
-  background: -moz-linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
-  background: linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
-  height: calc(100vh - 90px);
-  top: 0;
-  left: 0;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  background-size: cover;
-  background-position: center center;
-  display: block;
-  box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-  transition: 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-  width: 100%;
-  min-height: 100%;
-  max-height: calc(100vh - 705px);
-  z-index: 4;
-  position: relative;
-  overflow: auto;
-}
-.application-container {
-  padding-top: 3%;
-  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-  padding-left: 10px;
-  text-align: center;
-}
-
-.header-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  background-color: $headerBackColor;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  background-color: cornflowerblue;
-}
-.body-container {
-  grid-template-columns: 1fr 5fr;
-  display: grid;
-}
-
-.logo-wrapper {
-  text-align: center;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas:
+    "logo logo header header header header header header user user"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "left-bar left-bar content content content content content content content right-bar"
+    "footer footer footer footer footer footer footer footer footer footer";
 }
 
 .logo {
-  width: 100%;
-  height: 100%;
+  grid-area: logo;
+  padding-left: 5vw;
+}
+
+.header {
+  .team-name {
+    font-size: 2em;
+  }
+  grid-area: header;
+  padding: 1vh;
+  text-align: center;
+}
+
+.left-bar {
+  padding: 3vh;
+  font-size: 1.1em;
+  grid-area: left-bar;
+  box-shadow: 1px blue;
+
+  p {
+    line-height: 1.3em;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+
+  a {
+    color: black;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.content {
+  padding: 3vw;
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+  text-align: right;
+  padding-right: 1em;
+}
+
+.user {
+  span {
+    font-size: 1.2em;
+  }
+  grid-area: user;
+  text-align: right;
+}
+
+.right-bar {
+  grid-area: right-bar;
+}
+
+.white {
+  background: transparent !important;
+  tbody > tr:nth-child(odd) {
+    font-size: 1.1em;
+  }
+}
+
+.icon-span {
+  padding-left: 0.5em;
+}
+
+.result-table tbody  {
+    :hover {
+      background-color: darkgray;
+    }
+
+    tr{
+        td:nth-child(3n + 1) {
+            text-align: left;
+          }
+          td:nth-child(3n + 0) {
+            text-align: right;
+          }
+        
+          td.win {
+            font-weight: bold;
+          }
+    }
+    tr > td.match-result{
+      text-align: center;
+    }
+    
+    tr > td.home-team{
+      text-align: left;
+    }
+
+    tr > td.away-team{
+      text-align: right;
+    }
+
+    tr > td {
+      width: 33%;
+    }
+}
+
+@media (max-width: $minWidth){
+ .left-bar > p > span {
+   display: none;
+ }
+
+ .icon-span {
+ display: none;
+ }
+
+ .result-table > tbody > tr > td > div.team-name {
+  display: none;
+}
+}
+
+
+@media (min-width: $minWidth){
+  .result-table > tbody > tr > td > div.team-code {
+    display: none;
+  }
 }
